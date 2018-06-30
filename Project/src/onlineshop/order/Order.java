@@ -1,9 +1,17 @@
 package onlineshop.order;
 
+import onlineshop.shipping.ShippingType;
+import onlineshop.users.User;
+
+import java.util.ArrayList;
+
 public class Order {
     private int totalCost;
-    private ArrayList<Product> productList;
-    private User user;
+    private ArrayList<User> userOrders;
     private ShippingType shippingType;
 
+    public Order(ShippingType shippingType) {
+        userOrders = new ArrayList<>();
+        this.shippingType = shippingType;
+    }
 }
