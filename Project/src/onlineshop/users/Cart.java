@@ -1,8 +1,16 @@
 package onlineshop.users;
 
-import onlineshop.product.Product;
+
+import onlineshop.Product;
+
+import java.util.ArrayList;
 
 public class Cart {
+    private ArrayList<Product> userProducts;
+
+    public Cart() {
+        userProducts = new ArrayList<>();
+    }
 
     public void add(Product product) {
         userProducts.add(product);
@@ -17,4 +25,5 @@ public class Cart {
     public int count(){
         return userProducts.size();
     }
+
 }
