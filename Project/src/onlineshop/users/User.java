@@ -1,30 +1,26 @@
 package onlineshop.users;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import onlineshop.users.Cart;
-=======
->>>>>>> db72fcb445bd2aca4639e158dfb83f18ba2e8b82
-
->>>>>>> nmateev-master
-public abstract class User extends Cart {
+public abstract class User  {
     private String userName;
+    private String password;
     private String phone;
     private String address;
 
-    protected User(String userName, String address, String phone) {
+    protected User(String userName, String address, String phone,
+                   String password) {
         super();
+        setPassword(password);
         setUserName(userName);
         setPhone(phone);
         setAddress(address);
     }
 
-    public abstract void giveOrder();
-<<<<<<< HEAD
-
     private void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    private void setPassword(String password) {
+        this.password = password;
     }
 
     private void setPhone(String phone) {
@@ -34,10 +30,7 @@ public abstract class User extends Cart {
     private void setAddress(String address) {
         this.address = address;
     }
-=======
-<<<<<<< HEAD
->>>>>>> nmateev-master
+
+    public abstract double calcTotalCost();
+
 }
-=======
-}
->>>>>>> db72fcb445bd2aca4639e158dfb83f18ba2e8b82
