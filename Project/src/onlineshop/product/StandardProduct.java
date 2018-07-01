@@ -18,5 +18,10 @@ public class StandardProduct extends Product implements Returnable {
     public void increaseStockAfterReturn(Product product, int quantity) {
 
     }
+
+    @Override
+    public void showProduct() {
+
+    }
 }
 

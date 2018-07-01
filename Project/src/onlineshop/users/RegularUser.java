@@ -1,23 +1,31 @@
 package onlineshop.users;
 
 import onlineshop.order.Order;
-import onlineshop.shipping.ShippingType;
+import onlineshop.product.Product;
 
 public class RegularUser extends User {
     private Order userOrder;
-    private ShippingType shippingType;
 
-    public RegularUser(String userName, String address, String phone) {
-        super(userName, address, phone);
-        userOrder = new Order(shippingType);
+    public RegularUser(String userName, String address, String phone,
+                       String password) {
+        super(userName,address,phone,password);
+        userOrder = new Order();
     }
 
+    public Order getUserOrder() {
+        return userOrder;
+    }
     @Override
-    public void giveOrder() {
-
-    }
-
-    public void setShippingType(ShippingType shippingType) {
-        this.shippingType = shippingType;
+    public double calcTotalCost() {
+        double totalCost = userOrder.getSelected().stream().mapToDouble(Product::getPrice).sum();
+        switch (userOrder.getShipping()) {
+            case EXPRESS:
+                totalCost += totalCost * 0.3;
+                break;
+            case STANDART:
+                totalCost += totalCost * 0.1;
+                break;
+        }
+        return totalCost;
     }
 }
