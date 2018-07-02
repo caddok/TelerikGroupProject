@@ -1,43 +1,40 @@
-<<<<<<< HEAD:Project/src/onlineshop/Product.java
-package onlineshop;
-=======
 package onlineshop.product;
->>>>>>> db72fcb445bd2aca4639e158dfb83f18ba2e8b82:Project/src/onlineshop/product/Product.java
 
 import onlineshop.Supplier;
 
-public abstract class Product {
-<<<<<<< HEAD:Project/src/onlineshop/Product.java
-    int id;
-    String name;
-    String brand;
-    String description;
-    product.Category categoryType;
-    int stock;
-    double price;
-    Supplier supplier;
+<<<<<<< HEAD
+public class Product {
 =======
-    static int idGenerator = 1;
+public abstract class Product {
+
     private int id;
+>>>>>>> 13fa4b04afca191bf6d70c492590a0b350d52c7b
     private String name;
     private String brand;
     private String description;
-    private Category categoryType;
+    private Category category;
     private int stock;
     private double price;
     private Supplier supplier;
 
+<<<<<<< HEAD
+    public Product(String name, String brand, String description, Category category, int stock, double price, Supplier supplier) {
+=======
 
-    Product(String name, String brand, String description, Category categoryType, int stock, double price, Supplier supplier) {
-        setId(idGenerator);
+    Product(int id,String name, String brand, String description, Category categoryType, int stock, double price, Supplier supplier) {
+        setId(id);
+>>>>>>> 13fa4b04afca191bf6d70c492590a0b350d52c7b
         setName(name);
         setBrand(brand);
         setDescription(description);
-        setCategoryType(categoryType);
+        setCategory(category);
         setStock(stock);
         setPrice(price);
         setSupplier(supplier);
-        idGenerator++;
+<<<<<<< HEAD
+    }
+
+=======
     }
 
     public int getId() {
@@ -76,11 +73,20 @@ public abstract class Product {
         StringBuilder productInfo = new StringBuilder();
         productInfo
                 .append(this.getName()).append(", Brand: ").append(this.getBrand())
-                .append(", Product description: ").append(this.getDescription())
+                .append(", Description: ").append(this.getDescription())
                 .append(", Price: ").append(this.getPrice())
-                .append(", Stock availability: ").append(this.getStock());
+                .append(", Stock: ").append(this.getStock());
         System.out.println(productInfo);
 
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder currentProduct = new StringBuilder();
+        currentProduct
+                .append(this.getName()).append(", Brand: ").append(this.getBrand());
+
+        return currentProduct.toString();
     }
 
     private void setId(int id) {
@@ -88,38 +94,36 @@ public abstract class Product {
     }
 
 
+>>>>>>> 13fa4b04afca191bf6d70c492590a0b350d52c7b
     private void setName(String name) {
         this.name = name;
     }
-
 
     private void setBrand(String brand) {
         this.brand = brand;
     }
 
-
     private void setDescription(String description) {
         this.description = description;
     }
 
-
-    private void setCategoryType(Category categoryType) {
-        this.categoryType = categoryType;
+    private void setCategory(Category category) {
+        this.category = category;
     }
-
 
     private void setStock(int stock) {
         this.stock = stock;
     }
 
-
     private void setPrice(double price) {
         this.price = price;
     }
 
->>>>>>> db72fcb445bd2aca4639e158dfb83f18ba2e8b82:Project/src/onlineshop/product/Product.java
-
     private void setSupplier(Supplier supplier) {
         this.supplier = supplier;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
