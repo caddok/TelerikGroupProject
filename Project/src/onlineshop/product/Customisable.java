@@ -2,8 +2,7 @@ package onlineshop.product;
 
 public interface Customisable {
 
-    CustomProduct addLabel(String label);
+    CustomProduct addCustomisation( String customisation);
 
-    CustomProduct addParts(String parts);
     void showProduct();
 }
