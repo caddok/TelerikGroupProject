@@ -4,41 +4,17 @@ import onlineshop.order.Order;
 import onlineshop.product.Product;
 
 public class VipUser extends User {
-    private Order userOrder;
+    public final double SILVER_VIP_USER_DISCOUNT = 0.05;
+    public final double GOLD_VIP_USER_DISCOUNT = 0.10;
+    public final double PLATINUM_VIP_USER_DISCOUNT = 0.15;
+
     private VipUserType type;
 
-    protected VipUser(String userName, String address, String phone, String password) {
-        super(userName, address, phone, password);
-        userOrder = new Order();
-        setType(type);
+    protected VipUser(String userName, String address, String phone, String password, Cart cart) {
+        super(userName, address, phone, password, new Cart());
     }
 
-    @Override
-    public double calcTotalCost() {
-        double totalCost = userOrder.getSelected().stream().mapToDouble(Product::getPrice).sum();
-        switch (userOrder.getShipping()) {
-            case EXPRESS:
-                totalCost += totalCost * 0.3;
-                break;
-            case STANDART:
-                totalCost += totalCost * 0.1;
-                break;
-        }
-        switch (type) {
-            case SILVER:
-                totalCost -= totalCost * 0.05;
-                break;
-            case GOLD:
-                totalCost -= totalCost * 0.1;
-                break;
-            case PLATINUM:
-                totalCost -= totalCost * 0.15;
-                break;
-        }
-        return totalCost;
-    }
-
-    public VipUserType getType() {
+    public VipUserType getVipType() {
         return type;
     }
 
