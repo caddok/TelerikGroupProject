@@ -2,7 +2,6 @@ package onlineshop.product;
 
 import onlineshop.Supplier;
 
-public class Product {
 
 public abstract class Product {
 
@@ -10,7 +9,7 @@ public abstract class Product {
     private String name;
     private String brand;
     private String description;
-    private Category category;
+    private Category categoryType;
     private int stock;
     private double price;
     private Supplier supplier;
@@ -21,13 +20,10 @@ public abstract class Product {
         setName(name);
         setBrand(brand);
         setDescription(description);
-        setCategory(category);
+        setCategory(categoryType);
         setStock(stock);
         setPrice(price);
         setSupplier(supplier);
-    }
-
-
     }
 
 
@@ -104,7 +100,7 @@ public abstract class Product {
     }
 
     private void setCategory(Category category) {
-        this.category = category;
+        this.categoryType = category;
     }
 
     private void setPrice(double price) {

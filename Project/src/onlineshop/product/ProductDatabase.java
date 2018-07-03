@@ -29,7 +29,7 @@ public class ProductDatabase implements LoadableDatabase, SearchableDatabase {
     @Override
     public void loadProductDatabase() {
 
-        File file = new File("Project\\files\\products-data.txt");
+        File file = new File("home\\georgi\\Downloads\\TelerikGroupProject\\Project\\files\\products-data.txt");
         try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             String line;
             int productId = 1;

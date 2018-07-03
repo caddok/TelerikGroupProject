@@ -2,15 +2,33 @@ package onlineshop.users;
 
 import onlineshop.product.Product;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public interface Cart {
-    void giveOrder();
+public class Cart {
+    private Map<Product,Integer> productsAndQuantities;
+    private int itemCount;
 
-    void add(Product product);
+    public Cart() {
+        productsAndQuantities = new HashMap<>();
+    }
 
-    void remove(Product product);
+    public Map<Product, Integer> getProductsAndQuantities() {
+        return new HashMap<>(productsAndQuantities);
+    }
 
-    int getCount();
+    public void addToCart(Product product, int quantity) {
+        productsAndQuantities.put(product,quantity);
+    }
 
+    public void removeFromCart(Product product) {
+        productsAndQuantities.remove(product);
+    }
+
+    public int getItemCount() {
+        for (Product product: productsAndQuantities.keySet()) {
+            itemCount += productsAndQuantities.get(product);
+        }
+        return itemCount;
+    }
 }

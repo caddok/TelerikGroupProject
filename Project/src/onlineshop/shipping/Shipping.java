@@ -16,7 +16,7 @@ public abstract class Shipping {
         this.type = type;
     }
 
-    public abstract void setPrice(double price);
+    public abstract void setPrice();
 
     public void setDeliveryTime(String deliveryTime){
 
