@@ -2,20 +2,15 @@ package onlineshop.users;
 
 import onlineshop.product.Product;
 
-public class Cart {
+import java.util.ArrayList;
 
-    public void add(Product product) {
-       // userProducts.add(product);
-    }
+public interface Cart {
+    void giveOrder();
 
-    public void delete(String productName) {
-      //  if (userProducts.contains(productName)) {
-     //       userProducts.remove(productName);
-     //   }
-    }
+    void add(Product product);
 
-    public int count(){
-      //  return userProducts.size();
-        return 0;
-    }
+    void remove(Product product);
+
+    int getCount();
+
 }
