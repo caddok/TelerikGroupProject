@@ -2,13 +2,11 @@ package onlineshop.product;
 
 import onlineshop.Supplier;
 
-<<<<<<< HEAD
 public class Product {
-=======
+
 public abstract class Product {
 
     private int id;
->>>>>>> 13fa4b04afca191bf6d70c492590a0b350d52c7b
     private String name;
     private String brand;
     private String description;
@@ -17,13 +15,9 @@ public abstract class Product {
     private double price;
     private Supplier supplier;
 
-<<<<<<< HEAD
-    public Product(String name, String brand, String description, Category category, int stock, double price, Supplier supplier) {
-=======
 
-    Product(int id,String name, String brand, String description, Category categoryType, int stock, double price, Supplier supplier) {
+    Product(int id, String name, String brand, String description, Category categoryType, int stock, double price, Supplier supplier) {
         setId(id);
->>>>>>> 13fa4b04afca191bf6d70c492590a0b350d52c7b
         setName(name);
         setBrand(brand);
         setDescription(description);
@@ -31,15 +25,11 @@ public abstract class Product {
         setStock(stock);
         setPrice(price);
         setSupplier(supplier);
-<<<<<<< HEAD
     }
 
-=======
+
     }
 
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -60,7 +50,7 @@ public abstract class Product {
     public int getStock() {
         return stock;
     }
-
+   
     public double getPrice() {
         return price;
     }
@@ -89,12 +79,18 @@ public abstract class Product {
         return currentProduct.toString();
     }
 
+    void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    int getId() {
+        return id;
+    }
+
     private void setId(int id) {
         this.id = id;
     }
 
-
->>>>>>> 13fa4b04afca191bf6d70c492590a0b350d52c7b
     private void setName(String name) {
         this.name = name;
     }
@@ -111,19 +107,11 @@ public abstract class Product {
         this.category = category;
     }
 
-    private void setStock(int stock) {
-        this.stock = stock;
-    }
-
     private void setPrice(double price) {
         this.price = price;
     }
 
     private void setSupplier(Supplier supplier) {
         this.supplier = supplier;
-    }
-
-    public double getPrice() {
-        return price;
     }
 }
