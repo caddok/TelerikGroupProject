@@ -32,10 +32,10 @@ public class ProductDatabase implements LoadableDatabase, SearchableDatabase {
      whether or not the product is customisable, description for customisation */
     @Override
     public void loadProductDatabase() {
-        
+      
         String separator = System.getProperty("file.separator");
         File file = new File("Project" + separator + "files" + separator + "products-data.txt");
-
+      
         try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             String line;
 
