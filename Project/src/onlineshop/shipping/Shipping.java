@@ -6,14 +6,14 @@ public abstract class Shipping {
     // onlineshop.shipping price
     protected double price;
 
-    //delivery time in hours
+    //delivery time
     private String deliveryTime;
 
-    //onlineshop.shipping address
+    //shipping address
     private String shippingAddress;
 
     public void setType(ShippingType type) {
-        this.type = type;
+            this.type = type;
     }
 
     public abstract void setPrice();
