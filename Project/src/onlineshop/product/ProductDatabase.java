@@ -36,6 +36,8 @@ public class ProductDatabase implements LoadableDatabase, SearchableDatabase {
         String separator = System.getProperty("file.separator");
         File file = new File("Project" + separator + "files" + separator + "products-data.txt");
         System.out.println(file.getAbsolutePath());
+
+        File file = new File("home\\georgi\\Downloads\\TelerikGroupProject\\Project\\files\\products-data.txt");
         try (BufferedReader in = new BufferedReader(new FileReader(file))) {
             String line;
 
