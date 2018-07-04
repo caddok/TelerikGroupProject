@@ -3,7 +3,6 @@ package onlineshop.users;
 import onlineshop.OnlineStore;
 import onlineshop.order.Order;
 import onlineshop.product.CustomProduct;
-import onlineshop.product.Customisable;
 import onlineshop.product.Product;
 import onlineshop.shipping.Shipping;
 import onlineshop.shipping.ShippingType;

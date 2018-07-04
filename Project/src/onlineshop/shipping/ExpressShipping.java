@@ -4,19 +4,32 @@ public class ExpressShipping extends Shipping {
     final static String DELIVERY_TIME = "2-3 Days";
 
     @Override
-    public void setType(ShippingType type) {
-        type = ShippingType.EXPRESS;
-        super.setType(type);
+    public void setType() {
+        super.setType(ShippingType.EXPRESS);
+    }
+    @Override
+    public void setShippingAddress(String shippingAddress) {
+        super.setShippingAddress(shippingAddress);
     }
 
+
     @Override
-    public void setDeliveryTime(String deliveryTime) {
-        deliveryTime = DELIVERY_TIME;
-        super.setDeliveryTime(deliveryTime);
+    public void setDeliveryTime() {
+
+        super.setDeliveryTime(DELIVERY_TIME);
     }
 
     @Override
     public void setPrice() {
-
+        super.price = price;
     }
+
+    public ExpressShipping(String address , double price) {
+        setType();
+        setDeliveryTime();
+        setShippingAddress(address);
+        setPrice();
+    }
+
+
 }

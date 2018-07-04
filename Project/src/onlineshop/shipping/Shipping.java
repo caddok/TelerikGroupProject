@@ -6,10 +6,10 @@ public abstract class Shipping {
     // onlineshop.shipping price
     protected double price;
 
-    //delivery time in hours
+    //delivery time
     private String deliveryTime;
 
-    //onlineshop.shipping address
+    //shipping address
     private String shippingAddress;
 
     public void setType(ShippingType type) {
@@ -22,6 +22,8 @@ public abstract class Shipping {
 
         this.deliveryTime = deliveryTime;
     }
+
+    public abstract void setType();
 
     public void setShippingAddress(String shippingAddress) {
         this.shippingAddress = shippingAddress;
@@ -42,4 +44,6 @@ public abstract class Shipping {
     public double getPrice() {
         return price;
     }
+
+    public abstract void setDeliveryTime();
 }

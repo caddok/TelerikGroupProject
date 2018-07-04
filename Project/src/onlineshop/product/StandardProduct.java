@@ -1,5 +1,6 @@
 package onlineshop.product;
 
+
 import onlineshop.Supplier;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class StandardProduct extends Product implements Returnable {
         super(id, name, brand, description, categoryType, stock, price, supplier);
     }
 
-
+    //method that handles the return of a product which implements Returnable interface
     @Override
     public void increaseStockAfterReturn(int quantityReturned, ProductDatabase database) {
         try {
@@ -20,12 +21,24 @@ public class StandardProduct extends Product implements Returnable {
             int id = returnedProduct.getId();
             int currentStockOfProduct;
             ArrayList<Product> allProducts = database.products;
-            for (Product allProduct : allProducts) {
-                if (allProduct.getId() == id) {
-                    currentStockOfProduct = allProduct.getStock();
-                    allProduct.setStock(currentStockOfProduct + quantityReturned);
+            boolean isProductInTheSystem = false;
+            /*checks if the store's database has the product and if it is in the database we get the current stock of the
+           product and add the quantity that is returned*/
+            for (Product product : allProducts) {
+                if (product.getId() == id) {
+                    isProductInTheSystem = true;
+                    currentStockOfProduct = product.getStock();
+                    product.setStock(currentStockOfProduct + quantityReturned);
                     break;
                 }
+            }
+
+             /*handles the situation that the store has no longer this product in the its database and creates a new
+            product with the returned quantity*/
+            if (!isProductInTheSystem) {
+                returnedProduct.setStock(quantityReturned);
+               database.products.add(returnedProduct);
+                database.returnableProducts.add((StandardProduct) returnedProduct);
             }
         } catch (NullPointerException npe) {
             System.out.println(ERROR_MESSAGE_FOR_RETURNING_PRODUCT);

@@ -12,6 +12,7 @@ public class Order {
         this.totalCost = totalCost;
     }
 
+
     public double getTotalCost() {
         return totalCost;
     }
