@@ -31,10 +31,5 @@ public class StandardProduct extends Product implements Returnable {
             System.out.println(ERROR_MESSAGE_FOR_RETURNING_PRODUCT);
         }
     }
-
-    @Override
-    public void showProduct() {
-
-    }
 }
 

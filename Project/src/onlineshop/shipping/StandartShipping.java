@@ -1,8 +1,9 @@
 package onlineshop.shipping;
 
 public class StandartShipping extends Shipping {
-
+    
     final static String DELIVERY_TIME="0-1 Week";
+
     @Override
     public void setType(ShippingType type) {
         type= ShippingType.STANDART;
