@@ -13,7 +13,7 @@ public abstract class Shipping {
     private String shippingAddress;
 
     public void setType(ShippingType type) {
-        this.type = type;
+            this.type = type;
     }
 
     public abstract void setPrice();

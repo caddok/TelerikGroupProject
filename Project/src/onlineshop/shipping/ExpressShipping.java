@@ -21,6 +21,8 @@ public class ExpressShipping extends Shipping {
 
     @Override
     public void setPrice() {
+
+    public void setPrice(double price) {
         super.price = price;
     }
 
@@ -29,6 +31,11 @@ public class ExpressShipping extends Shipping {
         setDeliveryTime();
         setShippingAddress(address);
         setPrice();
+    }
+
+
+}
+        setPrice(price);
     }
 
 

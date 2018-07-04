@@ -30,3 +30,6 @@ public class FreeShipping extends Shipping {
         setPrice();
     }
 }
+        setPrice(price);
+    }
+}
